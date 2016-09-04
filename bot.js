@@ -40,9 +40,9 @@ bot.prototype.constructor = bot;
  */
 bot.prototype.handle = function(req, res) {
     // the Telegram Update object. Useful shits
-    var Update = req.body,
+    var update = req.body,
         // the telegram Message object
-        Message = Update.message,
+        message = Update.message,
         // the user who sent it
         user_id = Message.from.id,
         // id of the chat(room)
@@ -53,16 +53,13 @@ bot.prototype.handle = function(req, res) {
     ////////////////////////
     // you may call the methods from API.js, which are all inherited by this bot class
 
-    this.sendMessage(chat_id, "you said: " + Message.text);
-}
-
-bot.prototype.bomb = function(req, res) {
-    var chat_id = Message.chat.id;
-
-    this.sendMessage(chat_id, 'Prepare to be served...');
-    this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
-    this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
-    this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+    if(message.text === '/bomb') {
+        this.sendMessage(chat_id, 'Prepare your anus...');
+        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+    }
+    this.sendMessage(chat_id, "you said: " + message.text);
 }
 
 // export the bot class

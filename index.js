@@ -50,11 +50,6 @@ app.route('/')
       res.send("you just called PUT\n")
   });
 
-app.route('/bomb')
-  .get(function(req, res) {
-      fleimiBot.bomb(req, res);
-  });
-
 // Listen to the port
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
