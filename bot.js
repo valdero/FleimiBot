@@ -42,11 +42,11 @@ bot.prototype.handle = function(req, res) {
     // the Telegram Update object. Useful shits
     var update = req.body,
         // the telegram Message object
-        message = Update.message,
+        message = update.message,
         // the user who sent it
-        user_id = Message.from.id,
+        user_id = message.from.id,
         // id of the chat(room)
-        chat_id = Message.chat.id;
+        chat_id = message.chat.id;
 
     ////////////////////////
     // Extend from here:  //
