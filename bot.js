@@ -41,25 +41,27 @@ bot.prototype.constructor = bot;
 bot.prototype.handle = function(req, res) {
     // the Telegram Update object. Useful shits
     var update = req.body,
-        // the telegram Message object
         message = update.message,
-        // the user who sent it
+        message_text = message.text.toLowerCase(),
         user_id = message.from.id,
-        // id of the chat(room)
         chat_id = message.chat.id;
 
-    ////////////////////////
-    // Extend from here:  //
-    ////////////////////////
-    // you may call the methods from API.js, which are all inherited by this bot class
-
-    if(message.text === '/bomb') {
-        this.sendMessage(chat_id, 'Prepare your anus...');
-        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
-        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
-        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+    if(message_text === '/serve') {
+      this.sendMessage(chat_id, 'Prepare your anus...');
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
     }
-    this.sendMessage(chat_id, "you said: " + message.text);
+
+    if(message_text === '/rekt') {
+      this.sendMessage(chat_id, 'Rekt.');
+    }
+
+    if(message_text == 'mbuid') {
+        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '').then(console.log);
+        this.sendMessage(chat_id, 'shieeeeeeeeeeeeeeeeeee');
+    }
+    //this.sendMessage(chat_id, "you said: " + message.text);
 }
 
 // export the bot class
