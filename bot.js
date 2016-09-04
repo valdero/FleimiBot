@@ -48,13 +48,13 @@ bot.prototype.handle = function(req, res) {
     }
 
     if(message_text === '/rekt') {
+      this.sendMessage(chat_id, '[ ] Not REKT');
+      
       var msg = fs.readFileSync(__dirname+'/public/list_of_rekt.txt','utf8');
       var lines = msg.split('\n');
       var randomLine = lines[Math.floor(Math.random()*lines.length)];
 
-      this.sendMessage(chat_id, '[ ] Not REKT').done(function() {
-        this.sendMessage(chat_id, randomLine);
-      });
+      this.sendMessage(chat_id, randomLine);
     }
 
     if(message_text === '/mindblown') {
