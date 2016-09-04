@@ -47,15 +47,7 @@ bot.prototype.handle = function(req, res) {
     }
 
     if(message_text === '/rekt') {
-      var msg = '';
-
-      fs.readFile(__dirname+'/public/list_of_rekt.md', function (err, data) {
-        if (err) throw err;
-        msg = data;
-      })
-      .then(
-        this.sendMessage(chat_id, msg);
-      );
+      this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/list_of_rekt.txt'), '');
     }
 
     if(message_text === '/mindblown') {
