@@ -51,9 +51,8 @@ bot.prototype.handle = function(req, res) {
     }
 
     if(message_text === '/mindblown') {
-        this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '').then(
-          this.sendMessage(chat_id, 'shit, son.');
-        );
+        this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '');
+        this.sendMessage(chat_id, 'shit, son.');
     }
     //this.sendMessage(chat_id, "you said: " + message.text);
 }
