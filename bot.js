@@ -48,12 +48,11 @@ bot.prototype.handle = function(req, res) {
         // id of the chat(room)
         chat_id = Message.chat.id;
 
-//     ////////////////////////
-//     // Extend from here:  //
-//     ////////////////////////
-//     // you may call the methods from API.js, which are all inherited by this bot class
+    ////////////////////////
+    // Extend from here:  //
+    ////////////////////////
+    // you may call the methods from API.js, which are all inherited by this bot class
 
-    // echo
     this.sendMessage(chat_id, "you said: " + Message.text);
 
 }
@@ -62,11 +61,11 @@ bot.prototype.handle = function(req, res) {
 module.exports = bot;
 
 // sample keyboard
-// var kb = {
-//     keyboard: [
-//         ['one', 'two'],
-//         ['three'],
-//         ['four']
-//     ],
-//     one_time_keyboard: true
-// }
+var kb = {
+    keyboard: [
+        ['one', 'two'],
+        ['three'],
+        ['four']
+    ],
+    one_time_keyboard: true
+}
