@@ -52,10 +52,10 @@ bot.prototype.handle = function(req, res) {
       var lines = msg.split('\n');
       var randomLine = lines[Math.floor(Math.random()*lines.length)];
 
-      this.sendMessage(chat_id, '[ ] Not REKT').then(
+      this.sendMessage(chat_id, '[ ] Not REKT')
+      .then(function() {
         this.sendMessage(chat_id, randomLine);
-      );
-
+      });
     }
 
     if(message_text === '/mindblown') {
