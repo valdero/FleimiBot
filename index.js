@@ -12,6 +12,8 @@ var multer = require('multer');
 // Init Telegram bot
 var bot = require(__dirname + '/bot.js');
 var fleimiBot = new bot(process.env.TOKEN, process.env.WEBHOOK);
+console.log('token: ' + process.env.TOKEN);
+console.log('webhook: ' + process.env.WEBHOOK);
 
 // HTML render engine
 app.engine('.html', ejs.__express);

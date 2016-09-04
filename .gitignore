@@ -13,3 +13,4 @@ templates/
 # System files
 npm-debug.log
 .DS_Store
+.env

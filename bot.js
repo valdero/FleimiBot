@@ -54,18 +54,17 @@ bot.prototype.handle = function(req, res) {
     // you may call the methods from API.js, which are all inherited by this bot class
 
     this.sendMessage(chat_id, "you said: " + Message.text);
-
 }
 
 // export the bot class
 module.exports = bot;
 
 // sample keyboard
-var kb = {
-    keyboard: [
-        ['one', 'two'],
-        ['three'],
-        ['four']
-    ],
-    one_time_keyboard: true
-}
+// var kb = {
+//     keyboard: [
+//         ['one', 'two'],
+//         ['three'],
+//         ['four']
+//     ],
+//     one_time_keyboard: true
+// }
