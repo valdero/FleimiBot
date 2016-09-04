@@ -1,7 +1,7 @@
 {
-  "name": "Telegram bot bootstrap",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/kengz/telegram-bot-bootstrap",
+  "name": "FleimiBot for Telegram",
+  "description": "App for FleimiBot",
+  "repository": "https://github.com/valdero/fleimi-bot",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
   "keywords": ["Telegram", "bot", "bootstrap", "node", "express", "static"]
 }

@@ -5,14 +5,14 @@
     "dir": "annotated"
   },
   "jsdoc": {
-    "title": "Telegram Bot Bootstrap",
+    "title": "FleimiBot for Telegram",
     "source": "API.js",
     "markdown": "README.md",
     "html": "index.html",
     "readme": "README.md",
     "template": "templates/index.ejs.html",
-    "github": "https://github.com/kengz/telegram-bot-bootstrap",
-    "site": "http://kengz.github.io/telegram-bot-bootstrap/"
+    "github": "https://github.com/valdero/fleimi-bot",
+    "site": "https://valdero.github.io/fleimi-bot/"
   },
   "mocha": {
     "command": "mocha -u tdd --reporter doc",

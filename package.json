@@ -1,7 +1,7 @@
 {
-  "name": "telegram-bot-bootstrap",
-  "version": "0.0.15",
-  "description": "A bootstrap for Telegram bot with directly deployable sample bot and JS-wrapped API methods.",
+  "name": "fleimibot",
+  "version": "0.0.0",
+  "description": "",
   "main": "API.js",
   "scripts": {
     "start": "node index.js",
@@ -9,25 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kengz/telegram-bot-bootstrap.git"
+    "url": "https://github.com/valdero/fleimi-bot.git"
   },
   "keywords": [
     "Telegram",
     "bot",
-    "Telegram bot",
-    "nodeJS",
-    "API",
-    "bootstrap",
-    "template",
-    "sample",
-    "Heroku"
+    "FleimiBot"
   ],
-  "author": "kengz",
+  "author": "Valentin Abramenkov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kengz/telegram-bot-bootstrap/issues"
+    "url": "https://github.com/valdero/fleimi-bot/issues"
   },
-  "homepage": "https://github.com/kengz/telegram-bot-bootstrap",
+  "homepage": "https://github.com/valdero/fleimi-bot",
   "dependencies": {
     "body-parser": "^1.13.2",
     "ejs": "^2.3.1",
