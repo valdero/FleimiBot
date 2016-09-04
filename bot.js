@@ -43,18 +43,19 @@ bot.prototype.handle = function(req, res) {
       this.sendMessage(chat_id, 'prepare your anus...');
       this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/hilarius.gif'), '');
       this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '');
-      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/supahot.jpg'), '');
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '');
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '');
     }
 
     if(message_text === '/rekt') {
-      this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/list_of_rekt.txt'), '');
+      var msg = fs.readFileSync(__dirname+'/public/list_of_rekt.txt','utf8');
+      this.sendMessage(chat_id, msg);
     }
 
     if(message_text === '/mindblown') {
       this.sendMessage(chat_id, 'shit, son.');
       this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '');
     }
-    //this.sendMessage(chat_id, "you said: " + message.text);
 }
 
 // export the bot class
