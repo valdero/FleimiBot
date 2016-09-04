@@ -26,17 +26,6 @@ bot.prototype.constructor = bot;
  * @param {Object} req The incoming HTTP request.
  * @param {Object} res The HTTP response in return.
  * @returns {Promise} promise A promise returned from calling Telegram API method(s) for chaining.
- *
- * @example
- * var bot1 = new bot('yourtokenhere');
- * ...express server setup
- * app.route('/')
- * // robot API as middleware
- * .post(function(req, res) {
- *     bot1.handle(req, res)
- * })
- * // Then bot will handle the incoming Update from you, routed from Telegram!
- *
  */
 bot.prototype.handle = function(req, res) {
     // the Telegram Update object. Useful shits
@@ -46,20 +35,25 @@ bot.prototype.handle = function(req, res) {
         user_id = message.from.id,
         chat_id = message.chat.id;
 
+    if(message_text === '/bomb') {
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+    }
+
     if(message_text === '/serve') {
-      this.sendMessage(chat_id, 'Prepare your anus...');
+      this.sendMessage(chat_id, 'prepare your anus...');
       this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
       this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
       this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
     }
 
     if(message_text === '/rekt') {
-      this.sendMessage(chat_id, 'Rekt.');
+      this.sendMessage(chat_id, fs.createReadStream(__dirname+'/public/list_of_rekt.md'));
     }
 
-    if(message_text == 'mbuid') {
-        this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '').then(console.log);
-        this.sendMessage(chat_id, 'shieeeeeeeeeeeeeeeeeee');
+    if(message_text === '/mindblown') {
+        this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '').then(
+          this.sendMessage(chat_id, 'shit, son.');
+        );
     }
     //this.sendMessage(chat_id, "you said: " + message.text);
 }
