@@ -41,18 +41,23 @@ bot.prototype.handle = function(req, res) {
 
     if(message_text === '/serve') {
       this.sendMessage(chat_id, 'prepare your anus...');
-      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
-      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
-      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+      this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/hilarius.gif'), '');
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '');
+      this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/supahot.jpg'), '');
     }
 
     if(message_text === '/rekt') {
-      this.sendMessage(chat_id, fs.createReadStream(__dirname+'/public/list_of_rekt.md'));
+      this.sendMessage(chat_id,
+        fs.readFile(__dirname+'/public/list_of_rekt.md', function (err, data) {
+          if (err) throw err;
+          return data;
+        });
+      );
     }
 
     if(message_text === '/mindblown') {
-        this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '');
-        this.sendMessage(chat_id, 'shit, son.');
+      this.sendMessage(chat_id, 'shit, son.');
+      this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '');
     }
     //this.sendMessage(chat_id, "you said: " + message.text);
 }
