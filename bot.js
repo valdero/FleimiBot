@@ -33,11 +33,11 @@ bot.prototype.handle = function(req, res) {
         user_id = message.from.id,
         chat_id = message.chat.id;
 
-    if(message_text === '/bomb') {
+    if(message_text === '/bomb' || message_text === '/bomb@fleimibot') {
       this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
     }
 
-    if(message_text === '/serve') {
+    if(message_text === '/serve' || message_text === '/serve@fleimibot') {
       this.sendMessage(chat_id, 'prepare your anus...');
       this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/hilarius.gif'), '');
       this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '');
@@ -45,7 +45,7 @@ bot.prototype.handle = function(req, res) {
       this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '');
     }
 
-    if(message_text === '/rekt') {
+    if(message_text === '/rekt' || message_text === '/rekt@fleimibot') {
       var msg = fs.readFileSync(__dirname+'/public/list_of_rekt.txt','utf8');
       var lines = msg.split('\n');
       var randomLine = lines[Math.floor(Math.random()*lines.length)];
@@ -53,7 +53,7 @@ bot.prototype.handle = function(req, res) {
       this.sendMessage(chat_id, '[ ] Not REKT\n' + randomLine);
     }
 
-    if(message_text === '/mindblown') {
+    if(message_text === '/mindblown' || message_text === '/mindblown@fleimibot') {
       this.sendMessage(chat_id, 'shit, son.');
       this.sendDocument(chat_id, fs.createReadStream(__dirname+'/public/mind_blown.gif'), '');
     }
