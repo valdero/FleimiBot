@@ -1,4 +1,3 @@
-[ ] Not REKT
 [x] REKT
 [x] REKTangle
 [x] SHREKT
