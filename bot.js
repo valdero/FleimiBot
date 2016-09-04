@@ -1,6 +1,6 @@
 // dependencies
 var _ = require('lomath');
-
+var fs = require('fs');
 // API as superclass that bot inherits methods from
 var API = require(__dirname + '/API.js')
 
@@ -54,6 +54,15 @@ bot.prototype.handle = function(req, res) {
     // you may call the methods from API.js, which are all inherited by this bot class
 
     this.sendMessage(chat_id, "you said: " + Message.text);
+}
+
+bot.prototype.bomb = function(req, res) {
+    var chat_id = Message.chat.id;
+
+    this.sendMessage(chat_id, 'Prepare to be served...');
+    this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+    this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
+    this.sendPhoto(chat_id, fs.createReadStream(__dirname+'/public/boom.jpg'), '').then(console.log);
 }
 
 // export the bot class
