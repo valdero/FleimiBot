@@ -1,1 +1,1 @@
-# fleimi-bot
+# FleimiBot
