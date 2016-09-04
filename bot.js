@@ -1,21 +1,20 @@
-// dependencies
+// Dependencies
 var _ = require('lomath');
 var fs = require('fs');
 // API as superclass that bot inherits methods from
 var API = require(__dirname + '/API.js')
 
 // The bot object prototype
-// bot extends and inherits methods of API
+// Bot extends and inherits methods of API
 var bot = function(token, webhookUrl) {
     API.apply(this, arguments);
-    // set webhook on construction: override the old webhook
+    // Set webhook on construction: override the old webhook
     this.setWebhook(webhookUrl || '');
-
 }
 
-// set prototype to API
+// Set prototype to API
 bot.prototype = API.prototype;
-// set constructor back to bot
+// Set constructor back to bot
 bot.prototype.constructor = bot;
 
 
@@ -28,7 +27,6 @@ bot.prototype.constructor = bot;
  * @returns {Promise} promise A promise returned from calling Telegram API method(s) for chaining.
  */
 bot.prototype.handle = function(req, res) {
-    // the Telegram Update object. Useful shits
     var update = req.body,
         message = update.message,
         message_text = message.text.toLowerCase(),
@@ -48,13 +46,11 @@ bot.prototype.handle = function(req, res) {
     }
 
     if(message_text === '/rekt') {
-      this.sendMessage(chat_id, '[ ] Not REKT');
-      
       var msg = fs.readFileSync(__dirname+'/public/list_of_rekt.txt','utf8');
       var lines = msg.split('\n');
       var randomLine = lines[Math.floor(Math.random()*lines.length)];
 
-      this.sendMessage(chat_id, randomLine);
+      this.sendMessage(chat_id, '[ ] Not REKT\n' + randomLine);
     }
 
     if(message_text === '/mindblown') {
@@ -65,13 +61,3 @@ bot.prototype.handle = function(req, res) {
 
 // export the bot class
 module.exports = bot;
-
-// sample keyboard
-// var kb = {
-//     keyboard: [
-//         ['one', 'two'],
-//         ['three'],
-//         ['four']
-//     ],
-//     one_time_keyboard: true
-// }
