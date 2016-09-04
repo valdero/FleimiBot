@@ -2,6 +2,6 @@
   "name": "FleimiBot for Telegram",
   "description": "App for FleimiBot",
   "repository": "https://github.com/valdero/fleimi-bot",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["Telegram", "bot", "bootstrap", "node", "express", "static"]
+  "logo": "",
+  "keywords": ["Telegram", "bot", "bootstrap", "node", "express", "hot fire"]
 }
